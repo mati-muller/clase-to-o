@@ -1,4 +1,5 @@
 import numpy as np  # Importamos la librería NumPy para trabajar con matrices
+import time  # Importamos la librería time para medir el tiempo de ejecución
 
 def contarPuntosCalientes(matriz):
     filas, columnas = matriz.shape  # Obtenemos el tamaño de la matriz
@@ -58,6 +59,7 @@ matriz = np.array([
     [2, 1, 2, 1]
 ])
 
+time_initial = time.time()  # Medimos el tiempo inicial
 # Contamos puntos calientes
 cantidad = contarPuntosCalientes(matriz) #Activamos la función contarPuntosCalientes
 print("Cantidad de puntos calientes:", cantidad)
@@ -72,3 +74,6 @@ matriz_etiquetada = etiquetarMapa(matriz.copy(), posiciones) # Activamos la func
 # Imprimimos la matriz final
 print("Matriz final:")
 print(matriz_etiquetada)
+
+time_final = time.time()  # Medimos el tiempo final
+print("Tiempo de ejecución:", time_final - time_initial, "segundos")  # Most
